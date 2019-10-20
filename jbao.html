@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- import CSS -->
+  <title>HTML 云计算</title>
+  <!-- 前端中极高手，，，， -->
+  <link crossorigin="anonymous" integrity="sha384-lORadheqlc4cbo9L5It1a5q/AS57s9lXvER3RpFU97WXyO3bZL+siYtgOjLigS3D" href="https://lib.baomitu.com/element-ui/2.12.0/theme-chalk/index.css" rel="stylesheet">
+</head>
+<body>
+    <h1>耀科云HTML云计算 V114514</h1>
+    <h2>Powered by 李宗羊</h2>
+    <h3>HTML 云编译器</h3>
+  <div id="app">
+        <el-input
+        type="textarea"
+        :autosize="{ minRows: 4}"
+        placeholder="请输入带码，，，，"
+        v-model="codetexts">
+      </el-input>
+    <el-button @click="open">编译，，，</el-button>
+    <div style="margin: 40px 0;"></div>
+    <h3>{{ outputhead }}</h3>
+      <pre>{{encodedData}}</pre>
+  </div>
+</body>
+  <!-- import Vue before Element -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <!-- import JavaScript -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        codetexts: '',
+        outputhead: '输出结果',
+        encodedData: '',
+      },
+      methods: {
+        open() {
+        
+        this.$alert('请下载耀科云客户端查看编译输出文件，，，，', '编译成功', {
+          confirmButtonText: 'ao!',
+           callback: action => {
+             // this.$message({
+             //   type: 'info',
+             //   message: `action: ${ action }`
+             // });
+             this.encodedData = btoa(this.codetexts);
+           }
+          
+
+        });
+        
+        
+      }
+
+
+      }
+    });
+    
+  </script>
+</html>
